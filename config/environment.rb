@@ -5,7 +5,7 @@ require_relative 'application'
 Rails.application.initialize!
 
 production:
- <<: *default
- adapter: postgresql
- encoding: unicode
- pool: 5
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
