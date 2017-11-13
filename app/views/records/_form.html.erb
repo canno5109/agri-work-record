@@ -1,0 +1,62 @@
+<%= form_for(record) do |f| %>
+  <% if record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(record.errors.count, "error") %> prohibited this record from being saved:</h2>
+
+      <ul>
+      <% record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_name %>
+    <%= f.text_field :user_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :crop_name %>
+    <%= f.text_field :crop_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %>
+    <%= f.datetime_select :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :work_name %>
+    <%= f.text_field :work_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :work_reason %>
+    <%= f.text_area :work_reason %>
+  </div>
+
+  <div class="field">
+    <%= f.label :technical_supplement %>
+    <%= f.text_area :technical_supplement %>
+  </div>
+
+  <div class="field">
+    <%= f.label :consideration %>
+    <%= f.text_area :consideration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :evidence %>
+    <%= f.text_area :evidence %>
+  </div>
+
+  <div class="field">
+    <%= f.label :photo %>
+    <%= f.file_field :photo,accept: "image/jpeg" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
